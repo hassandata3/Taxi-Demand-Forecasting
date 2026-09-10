@@ -37,13 +37,6 @@ Predicts hourly ride demand across 8 Baghdad districts to help a taxi app place 
 - `Baghdad_Taxi_Demand_Project.ipynb` — EDA, feature engineering, model (Colab)
 - `Baghdad Taxi Demand Dashboard.html` — results dashboard, opens in any browser
 
-## Running it
-
-1. Run the SQL script in MySQL against the four CSVs
-2. Export `trips_hourly_analytical` to CSV
-3. Upload that CSV into the notebook and run all cells
-4. Open the dashboard HTML to view results
-
 ## Tools
 
 MySQL · Python (pandas, scikit-learn, XGBoost) · Power BI
