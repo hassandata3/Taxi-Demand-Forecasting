@@ -6,7 +6,7 @@ Predicts hourly ride demand across 8 Baghdad districts to help a taxi app place 
 
 1. **SQL (MySQL)** — clean messy raw trip data (inconsistent zone spellings, duplicate trips, bad timestamps), build a complete zone × hour panel with zero-filled gaps
 2. **Python (pandas, XGBoost)** — EDA, feature engineering (lags, rolling averages, calendar features), time-based train/test split, model
-3. **Dashboard** — interactive HTML report
+3. **Power BI** — interactive Dashboard
 
 ## Data
 
@@ -46,4 +46,4 @@ Predicts hourly ride demand across 8 Baghdad districts to help a taxi app place 
 
 ## Tools
 
-MySQL · Python (pandas, scikit-learn, XGBoost) · HTML/JS
+MySQL · Python (pandas, scikit-learn, XGBoost) · Power BI
