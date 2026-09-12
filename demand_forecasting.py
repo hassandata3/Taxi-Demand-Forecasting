@@ -341,8 +341,6 @@ zone_error
 
 """## Export Predictions for Power BI"""
 
-# saving the predictions so Power BI can read them
-
 export = pd.DataFrame({
     'hour_ts': df['hour_ts'][X_test.index],
     'zone_name': df['zone_name'][X_test.index],
@@ -352,17 +350,30 @@ export = pd.DataFrame({
     'day_name': df['day_name'][X_test.index],
     'actual_demand': y_test,
     'predicted_demand': np.round(xgb_pred, 2),
+
+
     'is_ramadan': df['is_ramadan'][X_test.index],
     'is_weekend_iraq': df['is_weekend_iraq'][X_test.index],
+    'is_eid': df['is_eid'][X_test.index],
+    'is_public_holiday': df['is_public_holiday'][X_test.index],
+    'is_religious_event': df['is_religious_event'][X_test.index],
+    'is_university_break': df['is_university_break'][X_test.index],
+
+
+    'temp_c': df['temp_c'][X_test.index],
+    'rain_mm': df['rain_mm'][X_test.index],
+    'is_dust_storm': df['is_dust_storm'][X_test.index],
+
     'total_requests': df['total_requests'][X_test.index],
     'no_driver_found': df['no_driver_found'][X_test.index],
-    'cancelled': df['cancelled'][X_test.index]
+    'cancelled': df['cancelled'][X_test.index],
 })
+
 
 export['error'] = (export['predicted_demand'] - export['actual_demand']).round(2)
 export['abs_error'] = export['error'].abs()
 
-export.to_csv('predictions_for_powerbi.csv' , index=False)
+export.to_csv('demand_for_powerbi.csv' , index=False)
 
 print(export.shape)
 export.head(5)
